@@ -1,0 +1,12 @@
+name: skifree-env
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pip
+  - pip:
+    - websockets
+    - pydantic
+    - matplotlib
+

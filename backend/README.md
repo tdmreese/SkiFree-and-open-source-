@@ -15,3 +15,19 @@ Install the package (cd into the skifree repo first)
 ```
 pip install -e backend
 ```
+
+## Activating the python environment
+```
+conda activate skifree-env
+```
+
+## Running
+```
+python backend/skifree/server.py
+```
+
+## Tests
+From the repo folder 
+```
+pytest backend
+```

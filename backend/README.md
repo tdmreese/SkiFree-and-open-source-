@@ -10,3 +10,8 @@ Then activate the environment with
 ```
 conda activate skifree-env
 ```
+
+Install the package (cd into the skifree repo first)
+```
+pip install -e backend
+```

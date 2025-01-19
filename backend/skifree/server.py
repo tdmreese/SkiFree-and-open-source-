@@ -5,7 +5,7 @@ import json
 import numpy as np 
 import matplotlib.pyplot as plt
 
-from .models import *
+from skifree.models import *
 from websockets.asyncio.server import serve
 from typing import Literal, Optional
 from pathlib import Path
@@ -217,7 +217,7 @@ class GameRoom:
 
         return {
             'game_objects': [o.model_dump(mode='json') for o in _game_objects[in_player_view].tolist()],
-            'camera_params': player.camera.dict(),
+            'camera_params': player.camera.model_dump(mode='json'),
         }
 
 
@@ -254,6 +254,7 @@ class GameRoom:
 # WEBSOCK CONNECTIONS
 # -------------------
 game = GameRoom(GameParameters())
+logger.info("Game room created")
 
 async def echo(websocket):
     logger.info(f"New connection from {websocket.remote_address}")
